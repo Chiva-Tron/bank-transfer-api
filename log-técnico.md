@@ -37,8 +37,8 @@ c- Simulamos errores
 d- Manejamos errores
 e- retornamos una respuesta en caso de transferencia exitosa
 
-14- Creamos un Servicio para simular fallos y probar el controlador y el manejo de fallos
-
-15- Inyectamos este servicio en el controlador
-
-16- 
+14- Probamos la API con:
+curl -X POST http://127.0.0.1:8000/api/transfer \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d '{"from_account_id":1,"to_account_id":2,"amount":10}'
