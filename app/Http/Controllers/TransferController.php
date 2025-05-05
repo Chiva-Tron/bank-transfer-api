@@ -39,14 +39,10 @@ class TransferController extends Controller
                 $from->save();
                 $to->save();
 
-                logger('➡️ Inicia transferencia');
-                logger('➡️ From ID: ' . $validated['from_account_id']);
-                logger('➡️ Simulando latencia externa');
                 # Simulación del sistema externo
                 usleep(random_int(100, 500) * 1000); # Latencia entre 100 y 500ms
 
                 if (random_int(1, 100) <= 20) { # Probabilidad de fallo del 20%
-                    logger('❌ Fallo simulado activado');
                     throw new \Exception('Fallo simulado en el sistema externo', 400);
                 }
 
